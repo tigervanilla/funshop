@@ -4,11 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TrendingProductsComponent } from './trending-products/trending-products.component';
+import { HomeComponent } from './home/home.component';
+import { TopBrandsComponent } from './top-brands/top-brands.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    TrendingProductsComponent,
+    HomeComponent,
+    TopBrandsComponent
   ],
   imports: [
     BrowserModule,
