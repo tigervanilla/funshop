@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FiltersComponent } from './filters/filters.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ShopComponent } from './shop/shop.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShopComponent } from './shop/shop.component';
     FooterComponent,
     FiltersComponent,
     CatalogueComponent,
-    ShopComponent
+    ShopComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
