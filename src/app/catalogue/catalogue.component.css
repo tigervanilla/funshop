@@ -1,0 +1,13 @@
+h5 a{
+    text-decoration: none;
+    color: #000;
+}
+
+h5 a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+span.price{
+    font-size: 1.2em;
+}

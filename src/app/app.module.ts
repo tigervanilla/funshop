@@ -8,6 +8,10 @@ import { TrendingProductsComponent } from './trending-products/trending-products
 import { HomeComponent } from './home/home.component';
 import { TopBrandsComponent } from './top-brands/top-brands.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
+import { FiltersComponent } from './filters/filters.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     TrendingProductsComponent,
     HomeComponent,
     TopBrandsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterComponent,
+    FiltersComponent,
+    CatalogueComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
