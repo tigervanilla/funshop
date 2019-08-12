@@ -1,0 +1,25 @@
+.display-4{
+    font-family: 'Satisfy', cursive;
+}
+/* 
+#column-heading{
+   height: 50px;
+} */
+
+.fa-shopping-cart{
+    font-size: 4em;
+    color: #17a2b8;
+}
+
+#payable{
+    font-weight: bold;
+}
+
+.section-intro__style {
+    border-bottom: 2px solid #384aeb;
+    padding-bottom: 8px;
+}
+
+#top-brands{
+    background-color: bisque;
+}
