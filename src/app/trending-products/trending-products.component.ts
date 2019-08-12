@@ -12,4 +12,8 @@ export class TrendingProductsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addToCart(): void {
+    alert('Add To Card Triggered');
+  }
+
 }
