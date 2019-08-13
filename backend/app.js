@@ -4,6 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const MongoClient = require('mongodb').MongoClient;
+const dbConfig=require('./dbConfig');
+var db;
+
+// connect to mongodb
+MongoClient.connect(dbConfig.dbUrl,(err, dbClient)=>{
+  if(err) throw err;
+  console.log('Database successfully connected');
+  db=dbClient.db(dbConfig.dbName);
+})
+
 var apiRoutes=require('./routes/apiRoutes')
 
 var app = express();
@@ -17,6 +28,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// add mongo client in req object
+app.use((req,res,next)=>{
+  req.db=db;
+  next();
+});
 
 app.use('/api', apiRoutes);
 
