@@ -14,7 +14,6 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
-import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { ShippingDetailComponent } from './shipping-detail/shipping-detail.compo
     ShopComponent,
     ProductDetailComponent,
     CartComponent,
-    ShippingDetailComponent
   ],
   imports: [
     BrowserModule,
