@@ -28,5 +28,9 @@ export class CartService {
   getItemsInCart(): CartItem[] {
     return JSON.parse(localStorage.getItem('cart'));
   }
+
+  syncCart(cartItems: CartItem[]) {
+    localStorage.setItem('cart',JSON.stringify(cartItems));
+  }
 }
 
