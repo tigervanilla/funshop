@@ -6,50 +6,16 @@
 
   <div class="container">
     <div class="card-deck">
-      <div class="card border-info">
-        <img src="assets/images/iphone.jpeg" class="card-img-top" alt="..." height="200px">
+      <div class="card border-info" *ngFor="let item of trendingProducts;index as i;">
+        <img src="{{item.img}}" class="card-img-top" alt="..." height="200px">
         <div class="card-body  text-center">
           <a routerLink="/detail/21">
-            <h5 class="card-title">iPhone X </h5>
+            <h5 class="card-title">{{item.name}}</h5>
           </a>
-          <span class="price text-info">₹80,000</span> <br>
-          <button class="btn btn-info"  (click)="addToCart('assets/images/iphone.jpeg', 'iPhone X', 80000, 1)">Add to Cart</button>
+          <span class="price text-info">₹{{item.price}}</span> <br>
+          <button class="btn btn-info"  (click)="addToCart(i)">Add to Cart</button>
         </div>
       </div>
-
-      <div class="card border-info">
-        <img src="assets/images/oneplus.jpg" class="card-img-top" alt="..." height="200px">
-        <div class="card-body  text-center">
-          <a routerLink="/detail/21">
-            <h5 class="card-title">One Plus 7 Pro </h5>
-          </a>
-          <span class="price text-info">₹45,000</span> <br>
-          <button class="btn btn-info" (click)="addToCart('assets/images/oneplus.jpg', 'One Plus 7 Pro', 45000, 1)">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="card border-info">
-        <img src="assets/images/s10.png" class="card-img-top" alt="..." height="200px">
-        <div class="card-body  text-center">
-          <a routerLink="/detail/21">
-            <h5 class="card-title">Samsung Galaxy S10</h5>
-          </a>
-          <span class="price text-info">₹90,000</span> <br>
-          <button class="btn btn-info" (click)="addToCart('assets/images/s10.png', 'Samsung Galaxy S10', 90000, 1)">Add to Cart</button>
-        </div>
-      </div>
-
-      <div class="card border-info">
-        <img src="assets/images/a50.jpg" class="card-img-top" alt="..." height="200px">
-        <div class="card-body  text-center">
-          <a routerLink="/detail/21">
-            <h5 class="card-title">Samsung A50</h5>
-          </a>
-          <span class="price text-info">₹19,000</span> <br>
-          <button class="btn btn-info" (click)="addToCart('assets/images/a50.jpg', 'Samsung A50', 19000, 1)">Add to Cart</button>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

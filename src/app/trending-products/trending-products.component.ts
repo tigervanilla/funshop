@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CartService } from './../cart.service';
+import { DataService } from '../data.service';
+
+import { Product } from '../product';
 
 @Component({
   selector: 'app-trending-products',
@@ -8,10 +11,14 @@ import { CartService } from './../cart.service';
   styleUrls: ['./trending-products.component.css']
 })
 export class TrendingProductsComponent implements OnInit {
-  addToCart: any;
-  constructor(private cartService: CartService) { }
+  trendingProducts: Product[];
+  constructor(private cartService: CartService, private dataService: DataService) { }
 
   ngOnInit() {
-    this.addToCart = this.cartService.addToCart;
+    this.dataService.getTrendingProducts().subscribe((data: Product[]) => this.trendingProducts = data);
+  }
+
+  addToCart(index: number) {
+    this.cartService.addToCart(this.trendingProducts[index].img, this.trendingProducts[index].name, this.trendingProducts[index].price, 1);
   }
 }
