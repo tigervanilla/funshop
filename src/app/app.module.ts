@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TrendingProductsComponent } from './trending-products/trending-products.component';
 import { HomeComponent } from './home/home.component';
 import { TopBrandsComponent } from './top-brands/top-brands.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { FiltersComponent } from './filters/filters.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
@@ -24,7 +23,6 @@ import { ShippingDetailComponent } from './shipping-detail/shipping-detail.compo
     TrendingProductsComponent,
     HomeComponent,
     TopBrandsComponent,
-    ContactUsComponent,
     FooterComponent,
     FiltersComponent,
     CatalogueComponent,
