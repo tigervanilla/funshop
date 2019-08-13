@@ -3,7 +3,7 @@
   <table class="table">
     <thead>
       <tr class="table-info">
-        <th scope="col">#</th>
+        <!-- <th scope="col">#</th> -->
         <th scope="col">Product</th>
         <th scope="col">Prict</th>
         <th scope="col">Qty</th>
@@ -11,17 +11,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td><img src="assets/images/iphone.jpeg" height="50px;" alt="Responsive image">iPhone X</td>
-        <td>₹80,000</td>
-        <td><input type="number" min="1" value="2"></td>
-        <td>₹1,60,000</td>
+      <tr *ngFor="let item of cartItems; index as i; ">
+        <!-- <th scope="row">1</th> -->
+        <td><img src={{item.img}} height="50px;" alt="Responsive image">{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td><input [(ngModel)]="cartItems[i].qty" (change)="getPayableAmount()" type="number" min="1" value={{item.qty}} id="qty"></td>
+        <td>{{cartItems[i].qty*item.price}}</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="container text-center" id="payable">Amount Payable: ₹1,60,000</div>
+  <div class="container text-center" id="payable">Amount Payable: {{amountPayable}}</div>
   <!-- <h1 class="display-4 mb-3 text-center">My Cart</h1>
 
   <div class="row align-items-center bg-info " id="column-heading">
