@@ -8,13 +8,10 @@ import { CartService } from './../cart.service';
   styleUrls: ['./trending-products.component.css']
 })
 export class TrendingProductsComponent implements OnInit {
-
+  addToCart: any;
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-  }
-
-  addToCart(img: string, name: string, price: number, qty: number): void {
-    this.cartService.addToCart(img, name, price, qty);
+    this.addToCart = this.cartService.addToCart;
   }
 }
