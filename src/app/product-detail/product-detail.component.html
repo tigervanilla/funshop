@@ -1,16 +1,14 @@
 <div class="container-fluid m-2">
   <div class="row mt-3">
     <div class="col-md">
-        <img src="assets/images/iphone.jpeg" class="img-fluid" alt="Responsive image">
+        <img src="{{product.img}}" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-md">
       <div class="container-fluid mt-5">
-          <h4>iPhone X</h4>
-          <p class="price text-info">₹80,000</p>
-          <p>Availability: In Stock</p>
-          <p class="description">
-              Meet the iPhone X - the device that's so smart that it responds to a tap, your voice, and even a glance. Elegantly designed with a large 14.73 cm (5.8) Super Retina screen and a durable front-and-back glass, this smartphone is designed to impress. What's more, you can charge this iPhone wirelessly.
-          </p>
+          <h4>{{product.brand}} {{product.name}}</h4>
+          <p class="price text-info">₹{{product.price}}</p>
+          <p>Availability: {{product.availability}}</p>
+          <p class="description"> {{product.description}} </p>
           <button type="button" class="mt-5">Add To Cart</button>
       </div>
     </div>

@@ -9,11 +9,15 @@ import { Product } from './product';
   providedIn: 'root'
 })
 export class DataService {
-  private url = 'localhost:3000/api';
+  private url = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
   getTrendingProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:3000/api/trending-products');
+    return this.http.get<Product[]>(`${this.url}/trending-products`);
+  }
+
+  getProductDetail(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.url}/product-detail/${id}`);
   }
 }

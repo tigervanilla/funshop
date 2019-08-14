@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const homeCtrl=require('./../controllers/homeCtrl')
+const productCtrl=require('./../controllers/productCtrl')
 
-router.get('/', homeCtrl.greeting);
-router.get('/trending-products', homeCtrl.getTrendingProducts);
+router.get('/', productCtrl.greeting);
+router.get('/trending-products', productCtrl.getTrendingProducts);
+router.get('/product-detail/:id', productCtrl.getProductDetail);
 
 module.exports=router;
