@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 // The location is an Angular service for interacting with the browser.Use it to navigate back to the view that navigated here.
 
 import { DataService } from './../data.service';
+import { CartService } from './../cart.service';
 import { Product } from '../product';
 
 @Component({
@@ -17,6 +18,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
+    private cartService: CartService,
     private route: ActivatedRoute,
     private location: Location
     ) { }
@@ -25,6 +27,10 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.dataService.getProductDetail(this.id).subscribe(details => this.product = details);
+  }
+
+  addToCart() {
+    this.cartService.addToCart(this.product.img, this.product.name, this.product.price, 1);
   }
 
 }
