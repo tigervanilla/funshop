@@ -1,11 +1,12 @@
         <div class="row m-2">
-          <div class="col-sm-4 mb-3">
+          <!-- <div class="col-sm-4 mb-3">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
-               <span class="price text-info">₹80,000</span> <br>
-               <button class="btn btn-info" (click)="addToCart('assets/images/iphone.jpeg', 'Apple iPhone X', 80000, 1)">Add to Cart</button>
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
+                <span class="price text-info">₹80,000</span> <br>
+                <button class="btn btn-info"
+                  (click)="addToCart('assets/images/iphone.jpeg', 'Apple iPhone X', 80000, 1)">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -13,53 +14,65 @@
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
                 <span class="price text-info">₹80,000</span> <br>
                 <button class="btn btn-info">Add to Cart</button>
               </div>
             </div>
           </div>
-  
+
           <div class="col-sm-4 mb-3">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
-               <span class="price text-info">₹80,000</span><br>
-               <button class="btn btn-info">Add to Cart</button>
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
+                <span class="price text-info">₹80,000</span><br>
+                <button class="btn btn-info">Add to Cart</button>
               </div>
             </div>
           </div>
-  
+
           <div class="col-sm-4 mb-3">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
-               <span class="price text-info">₹80,000</span><br>
-               <button class="btn btn-info">Add to Cart</button>
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
+                <span class="price text-info">₹80,000</span><br>
+                <button class="btn btn-info">Add to Cart</button>
               </div>
             </div>
           </div>
-  
+
           <div class="col-sm-4 mb-3">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
-               <span class="price text-info">₹80,000</span> <br>
-               <button class="btn btn-info">Add to Cart</button>
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
+                <span class="price text-info">₹80,000</span> <br>
+                <button class="btn btn-info">Add to Cart</button>
               </div>
             </div>
           </div>
-  
+
           <div class="col-sm-4 mb-3">
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title"><a routerLink="/detail/21">iPhone X</a></h5>
-                <img src="assets/images/iphone.jpeg" class="card-img-top"  height="auto" alt="...">
-               <span class="price text-info">₹80,000</span> <br>
-               <button class="btn btn-info">Add to Cart</button>
+                <img src="assets/images/iphone.jpeg" class="card-img-top" height="auto" alt="...">
+                <span class="price text-info">₹80,000</span> <br>
+                <button class="btn btn-info">Add to Cart</button>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- dynamic data -->
+          <div class="col-sm-4 mb-3" *ngFor="let item of productList; index as i;">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title"><a routerLink="/detail/{{item._id}}">{{item.name}}</a></h5>
+                <img src="{{item.img}}" class="card-img-top" height="200px" alt="...">
+                <span class="price text-info">{{item.price |  currency:'₹'}}</span> <br>
+                <button class="btn btn-info" (click)="addToCart(i)">Add to Cart</button>
               </div>
             </div>
           </div>

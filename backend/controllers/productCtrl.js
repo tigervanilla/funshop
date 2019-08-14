@@ -19,5 +19,12 @@ module.exports = {
       if(err) throw err;
       res.send(doc);
     })
+  },
+
+  getCatalogueData: (req, res, next)=>{
+    req.db.collection('products').find({},{projection:{'tags':0}}).toArray((err, docs)=>{
+      if(err) throw err;
+      res.send(docs);
+    })
   }
 }

@@ -20,4 +20,8 @@ export class DataService {
   getProductDetail(id: string): Observable<Product> {
     return this.http.get<Product>(`${this.url}/product-detail/${id}`);
   }
+
+  getCatalogueData(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.url}/catalogue`);
+  }
 }

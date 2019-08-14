@@ -15,16 +15,16 @@
       <tr *ngFor="let item of cartItems; index as i; ">
         <!-- <th scope="row">1</th> -->
         <td><img src={{item.img}} height="50px;" alt="Responsive image">{{item.name}}</td>
-        <td>₹{{item.price}}</td>
+        <td>{{item.price | currency:'₹'}}</td>
         <td><input [(ngModel)]="cartItems[i].qty" (change)="getPayableAmount()" type="number" min="1" value={{item.qty}}
             id="qty"></td>
-        <td>₹{{cartItems[i].qty*item.price}}</td>
+        <td>{{cartItems[i].qty*item.price | currency:'₹'}}</td>
         <td><button type="button" class="btn btn-danger" (click)="removeItemFromCart(i)">X</button></td>
       </tr>
     </tbody>
   </table>
 
-  <div class="container text-center" id="payable">Amount Payable: ₹{{amountPayable}}</div>
+  <div class="container text-center" id="payable">Amount Payable: {{amountPayable | currency:'₹'}}</div>
 </div>
 
 

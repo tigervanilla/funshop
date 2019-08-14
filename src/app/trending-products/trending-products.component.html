@@ -12,7 +12,7 @@
           <a routerLink="/detail/{{item._id}}">
             <h5 class="card-title">{{item.name}}</h5>
           </a>
-          <span class="price text-info">₹{{item.price}}</span> <br>
+          <span class="price text-info">{{item.price | currency:'₹'}}</span> <br>
           <button class="btn btn-info"  (click)="addToCart(i)">Add to Cart</button>
         </div>
       </div>
